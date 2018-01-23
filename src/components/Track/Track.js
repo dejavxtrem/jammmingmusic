@@ -22,11 +22,11 @@ renderAction() {
 
 }
 
-addTrack() {
+addTrack(event) {
     this.props.onAdd(this.props.track);
 }
 
-removeTrack () {
+removeTrack (event) {
   this.props.onRemove(this.props.track);
 
 }
