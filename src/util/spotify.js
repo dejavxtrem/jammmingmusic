@@ -24,13 +24,13 @@ const Spotify = {
  search(searchTerm) {
       const accessToken = Spotify.getAccessToken();
 
-     fetch(`https://api.spotify.com/v1/search?type=track&q=${searchTerm}`,{
+    return fetch(`https://api.spotify.com/v1/search?type=track&q=${searchTerm}`,{
          headers: {Authorization: `Bearer ${accessToken}`}
      }).then(response => {
          if (response.ok) {
              return response.json();
          }
-         throw new Error('Request failed!')
+         //throw new Error('Request failed!')
      },networkError =>console.log(networkError.message)
  ).then(jsonResponse => {
        if (!jsonResponse.tracks) {
@@ -57,7 +57,7 @@ savePlaylist(playlistName,trackURIs) {
             if(response.ok) {
                 return response.json();
             }
-            throw new Error('Request failed!');
+            //throw new Error('Request failed!');
         }).then(jsonResponse => {
             userId = jsonResponse.id
              return fetch(`https://api.spotify.com///v1/users/${userId}/playlists`,{
@@ -69,7 +69,7 @@ savePlaylist(playlistName,trackURIs) {
                 if(response.ok) {
                     return response.json();
                 }
-                throw new Error('Request failed!');
+                //throw new Error('Request failed!');
             }).then(jsonResponse => {
                 let playlistID = jsonResponse.id
             return fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistID}/tracks`,{
@@ -80,7 +80,7 @@ savePlaylist(playlistName,trackURIs) {
                 if(response.ok){
                     return response.json();
                 }
-                throw new Error('Request failed!');
+                //throw new Error('Request failed!');
             }).then(jsonResponse => {
                 let playlistID = jsonResponse.id});
         });
