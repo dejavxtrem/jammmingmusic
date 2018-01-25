@@ -10,6 +10,8 @@ class SearchBar extends React.Component {
 
     this.search = this.search.bind(this);
     this.handleTermChange = this.handleTermChange.bind(this);
+     this.handleKeyPress = this.handlePressKey.bind(this);
+     this.handleClick = this.handleClick.bind(this);
 
   }
 
@@ -20,6 +22,17 @@ class SearchBar extends React.Component {
   search() {
     this.state.searchTerm && this.props.onSearch(this.state.searchTerm);
   }
+
+  handleClick(event) {
+    event.target.setSelectionRange(0, event.target.value.length);
+  }
+
+  handlePressKey(event) {
+    if (event.key === 'Enter' && event.target.value) {
+      this.search();
+    }
+  }
+
    render () {
        return (
           <div className="SearchBar">
