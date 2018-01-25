@@ -12,15 +12,11 @@ this.removeTrack = this.removeTrack.bind(this);
 
 
 renderAction() {
-  if (this.props.isRemoval) {
-    return (
-      <a className="Track-action" onClick={this.removeTrack}>-</a>
-    );
-  } else {
-      return  (<a className="Track-action" onClick={this.addTrack}>+</a>);
+    if (this.props.isRemoval) {
+      return <a className="Track-action" onClick={this.removeTrack}>-</a>
+    }
+    return <a className="Track-action" onClick={this.addTrack}>+</a>;
   }
-
-}
 
 addTrack(event) {
     this.props.onAdd(this.props.track);

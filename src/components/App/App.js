@@ -21,14 +21,15 @@ class App extends React.Component {
 
 
 
-  addTrack (track) {
-     let tracks = this.state.playlistTracks;
-    if (!tracks.find(trackIndex=> trackIndex.id === track.id)) {
-       tracks.push(track);
-       this.setState = ({playlistTracks: track});
+    addTrack(track) {
+      let tracks = this.state.playlistTracks;
+      if (tracks.find(savedTrack => savedTrack.id === track.id)) {
+        return;
+      }
+      tracks.push(track);
+      this.setState({playlistTracks: tracks});
     }
 
-  }
 
  removeTrack (track) {
      let tracks = this.state.playlistTracks;
@@ -56,7 +57,7 @@ savePlaylist () {
 
 search(searchTerm) {
   console.log(searchTerm);
-  Spotify.search(searchTerm).then(results =>{this.setState({searchResults: results})})
+  Spotify.search(searchTerm).then(results =>{this.setState({searchResults: results})});
 
 }
 
