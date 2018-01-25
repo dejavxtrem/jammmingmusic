@@ -1,5 +1,5 @@
 const client_Id = '3b25943988c64d72b07ccb9a133e506a';
-const redirect_uri = 'http://localhost:3000/';
+const redirect_uri = 'http://jamupspotify.surge.sh';
 let userToken ;
 
 const Spotify = {
@@ -31,7 +31,7 @@ const Spotify = {
              return response.json();
          }
          //throw new Error('Request failed!')
-     },networkError =>console.log(networkError.message)
+     }//,//networkError =>console.log(networkError.message)
  ).then(jsonResponse => {
        if (!jsonResponse.tracks) {
          return [];
