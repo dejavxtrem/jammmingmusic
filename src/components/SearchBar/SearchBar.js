@@ -5,7 +5,7 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props);
      this.state= {
-       searchTerm: ""
+       searchTerm: ''
      }
 
     this.search = this.search.bind(this);
@@ -20,7 +20,7 @@ class SearchBar extends React.Component {
   }
 
   search() {
-    this.state.searchTerm && this.props.onSearch(this.state.searchTerm);
+    this.props.onSearch(this.state.searchTerm);
   }
 
   handleClick(event) {
