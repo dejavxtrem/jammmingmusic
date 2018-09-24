@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+This is a project written in Reactjs. it is a web application that connect to Spotify API. you can create search for songs, by artist name or song name , create custom playlist  to suit your choice  and save playlist to your spotify Account for easy Access. this was a Capstone project for a codeacademy certification 
+
+
+
+
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
